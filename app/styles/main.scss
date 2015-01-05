@@ -1,0 +1,141 @@
+// bower:scss
+// endbower
+@import "foundation/scss/foundation/components/buttons";
+@import "foundation/scss/foundation/components/panels";
+@import "foundation-icon-fonts/foundation-icons";
+
+// default page values
+$bg_color: #6eb3c4;
+$mail_icon_color: #adc5c9;
+
+// default button style values
+$padding: rem-calc(11);
+$radius: rem-calc(5);
+$full-width: true;
+$disabled: false;
+$is-input: false;
+
+body {
+  padding-left: 0;
+  padding-right: 0;
+  background-color: $bg_color;
+}
+
+fieldset {
+	border: none;
+	padding: 0px;
+}
+
+h1, h4, p {
+	color: #fff;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+}
+
+h1 {
+	font-size: rem-calc(22);
+	margin-bottom: 25px;
+}
+
+p {
+	font-size: rem-calc(15);
+}
+
+strong {
+	font-weight: 600;
+}
+
+input.email-field {
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+label.prefix {
+	background-color: #ffffff;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+
+.auto-width {
+	width: auto;
+}
+
+.container {
+	padding-top: 25px;
+}
+
+.mail-icon {
+	font-size: rem-calc(22);
+	color: $mail_icon_color;
+
+	.darken {
+		color: darken($mail_icon_color, 30%);
+		margin-top: 10px;
+		vertical-align: top;
+	}
+}
+
+.panel-error {
+	@include panel(
+	  $bg:#f43,
+	  $padding:5px 10px 5px 10px,
+	  $adjust:true
+	);
+	color: #ffffff;
+	font-size: rem-calc(13);
+}
+
+.panel-response {
+	@include panel(
+	  $bg:#fff,
+	  $padding:5px 10px 5px 10px,
+	  $adjust:true
+	);
+	color: #777;
+	font-size: rem-calc(13);	
+}
+
+.resend-coupon {
+	$bg: $bg_color;
+	@include button($padding, $bg, $radius, $full-width, $disabled, $is-input);
+	border: 1px solid #ffffff;
+	border-radius: 5px;
+	font-family: 'Open Sans', sans-serif;
+	font-size: rem-calc(13);
+	font-weight: 300;
+	letter-spacing: 1px;
+}
+
+.resend-row {
+	padding-top: 10px;
+}
+
+.resend-text {
+	margin-left: 10px;
+}
+
+.submit-button { 
+	$bg: #e47165;
+	@include button($padding, $bg, $radius, $full-width, $disabled, $is-input);
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	padding-top: rem-calc(8);
+	padding-bottom: rem-calc(8);
+}
+
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 641px) {
+ 	input.email-field {
+		width: 95%;
+	}
+
+	.container {
+		padding-top: 50px;
+	}
+
+	.resend-coupon {
+		padding: rem-calc(6);
+		font-size: rem-calc(10);
+	}
+}
